@@ -1,0 +1,19 @@
+Oficio de presentación
+
+Estimado(a) {nombre} {apellido1}:
+
+Por medio de la presente, nos es grato hacerle llegar la siguiente información sobre su registro con nosotros:
+
+Nombre completo: {nombre} {apellido1} {apellido2}
+Cargo: {cargo}
+Empresa: {empresa}
+Dirección: {calle} {numeroExt} {numeroInt}, Col. {colonia}, {municipio}, {estado}, C.P. {codigoPostal}
+Teléfono: {telefono}
+Correo electrónico: {correoElectronico}
+Fecha de nacimiento: {fechaNacimiento}
+Edad: {edad}
+
+Agradecemos su interés en nuestros servicios y quedamos a sus órdenes para cualquier consulta o aclaración.
+
+Atentamente,
+El equipo de nuestra empresa

@@ -8,54 +8,52 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Gender {
-  male
-  female
-}
-
-enum AuthType {
-  email
-  facebook
-  google
-  apple
-}
-
 model User {
-  id        String    @id @default(cuid()) @db.VarChar(255)
-  email     String    @unique @db.VarChar(255)
-  password  String?   @db.VarChar(255)
-  name      String?   @db.VarChar(255)
-  nickname  String?   @db.VarChar(255)
-  thumbURL  String?   @db.VarChar(255)
-  photoURL  String?   @db.VarChar(255)
-  birthDay  DateTime?
-  gender    Gender?
-  phone     String?   @db.VarChar(255)
-  verified  Boolean?
+  id       Int     @id @default(autoincrement())
+  email    String  @unique @db.VarChar(255)
+  password String? @db.VarChar(255)
+
   createdAt DateTime? @default(now())
   updatedAt DateTime? @default(now())
+
+  isDeleted Boolean   @default(false)
   deletedAt DateTime?
-  posts     Post[]
-  profile   Profile?
+
+  profile Profile?
+  oficio  Oficio?
 }
 
 model Profile {
-  id       String    @id @default(cuid()) @db.VarChar(255)
+  id       String  @id @default(cuid()) @db.VarChar(255)
+  userId   Int     @unique
+  User     User    @relation(fields: [userId], references: [id])
   socialId String?
-  authType AuthType?
-  userId   String    @unique @db.VarChar(255)
-  User     User      @relation(fields: [userId], references: [id])
+
+  name           String? @db.VarChar(255)
+  firstLastName  String? @db.VarChar(255)
+  secondLastName String? @db.VarChar(255)
+  position       String? @db.VarChar(255)
+  company        String? @db.VarChar(255)
+  street         String? @db.VarChar(255)
+  extNumber      String? @db.VarChar(255)
+  intNumber      String? @db.VarChar(255)
+  suburb         String? @db.VarChar(255)
+  city           String? @db.VarChar(255)
+  state          String? @db.VarChar(255)
+  zipCode        String? @db.VarChar(255)
+  phone          String? @db.VarChar(255)
+  birthDay       String?
+  age            Int?
 }
 
-model Post {
-  id        Int       @id @default(autoincrement())
-  title     String    @db.VarChar(255)
-  content   String?
-  published Boolean   @default(false)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @default(now())
-  deletedAt DateTime?
+model Oficio {
+  id Int @id @default(autoincrement())
 
-  userId String @db.VarChar(255)
-  user   User   @relation(fields: [userId], references: [id])
+  userId Int  @unique
+  User   User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime? @default(now())
+  path      String?   @db.VarChar(255)
+
+  updatedAt DateTime? @default(now())
 }

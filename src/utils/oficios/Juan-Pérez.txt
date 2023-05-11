@@ -1,0 +1,19 @@
+Oficio de presentación
+
+Estimado(a) Juan Pérez:
+
+Por medio de la presente, nos es grato hacerle llegar la siguiente información sobre su registro con nosotros:
+
+Nombre completo: Juan Pérez González
+Cargo: Gerente
+Empresa: Mi Empresa
+Dirección: Calle Falsa 123 , Col. Col. Centro, Ciudad de México, Ciudad de México, C.P. 06010
+Teléfono: 55-1234-5678
+Correo electrónico: juan@correo.com
+Fecha de nacimiento: 1990-01-01
+Edad: 31
+
+Agradecemos su interés en nuestros servicios y quedamos a sus órdenes para cualquier consulta o aclaración.
+
+Atentamente,
+El equipo de nuestra empresa
